@@ -10,7 +10,7 @@ describe('hero', function() {
   beforeEach( function() {
     superman = new Hero( "superman", 0, "fish fingers", "I am superman");
     sausages = new Food("sausages",10);
-    fishFingers = new Food("sausages",5);
+    fishFingers = new Food("fish fingers",5);
   })
 
   it("hero has name", function() {

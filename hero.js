@@ -13,8 +13,10 @@ var Hero = function( name, health, favFood, sayName) {
     eat: function(food) {
       if (food.name != this.favFood) {
         this.health = food.replenishmentValue;
-      }else {
-        this.health = food.replenishmentValue;
+      }
+      else 
+      {
+        this.health = 7.5;
       }
     }
   }

@@ -8,4 +8,4 @@ var Food = function(name, replenishmentValue) {
 
 
 
-module.exports = Hero;
+module.exports = Food;

@@ -1,8 +1,21 @@
 var assert = require ('assert');
 var Food = require ('../food');
 
-var food1;
+describe('food', function() {
 
-beforeEach( function() {
-  food 1 = new Food("sausages",10);
+  var sausages;
+
+  beforeEach( function() {
+    sausages = new Food("sausages",10);
+  })
+
+it("Food has name", function() {
+  assert.equal("sausages", sausages.name);
 })
+
+it("Food has replenishment value", function() {
+  assert.equal(10,sausages.replenishmentValue);
+})
+
+})
+

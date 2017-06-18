@@ -6,7 +6,7 @@ describe('food', function() {
   var sausages;
 
   beforeEach( function() {
-    sausages = new Food("sausages",10);
+    sausages = new Food("sausages", 10);
   })
 
 it("Food has name", function() {
@@ -14,8 +14,13 @@ it("Food has name", function() {
 })
 
 it("Food has replenishment value", function() {
-  assert.equal(10,sausages.replenishmentValue);
+  assert.equal(10, sausages.replenishmentValue);
 })
+
+it("food has not been contaminated by rat", function() {
+  assert.equal(false, sausages.contaminated);
+})
+
 
 })
 

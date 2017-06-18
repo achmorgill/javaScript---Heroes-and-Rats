@@ -13,7 +13,9 @@ var Task = function( action, difficulty, urgency, taskComplete ){
     },
 
     setTaskComplete: function() {
-        return this.taskComplete = true;
+  
+        this.taskComplete = true;
+        return this.taskComplete;
     },
 
   }

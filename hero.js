@@ -40,34 +40,36 @@ var Hero = function( name, health, favFood, sayName) {
       var sortedTasks = [];
       var sortkey = this.rewardTokens;
 
-      if (key === "difficulty") {
-        sortKey = this.difficulty;
-      }else if (key === "urgency") {
-        sortKey = this.difficutlty;
-      }
-
       console.log("tasklist", this.taskList);
-      sortedTasks = _.sortBy(taskList,['this.difficulty']);
-      sortedTasks.push("hello");
-      console.log("ss",sortedTasks[0]);
-      console.log("sorted array",sortedTasks);
-      return "'task 2','task 1', 'task3'"
+      // this.taskList.sort('key');
+      _.sortBy(this.taskList, 'key');
+      console.log("sorted array",this.taskList);
+
+      return this.taskList;
 
     }.bind(this),
 
     displayCompletedTasks: function(taskList) {
       var count = 0;
+      var completedTasks = [];
+
       for (var i=0; i<this.taskList.length; i++)
       {
         console.log("i, task", i,this.taskList[i].taskComplete)
-
-        // if (taskList[i].taskComplete) {
-        //   count++;
+        if (this.taskList[i].taskComplete) {
+          completedTasks[i] = this.taskList[i];
+          count++;
         }
-
+      }
       console.log("count", count);
-      return count;
-    }.bind(this)
+      console.log("completedtask",completedTasks.length)
+      return completedTasks.length;
+    }.bind(this),
+
+    checkFoodQuality: function(sausages) {
+      return sausages.contaminated;
+    }
+
   }
 }
 

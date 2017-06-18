@@ -7,6 +7,4 @@ var Food = function(name, replenishmentValue) {
 }
 
 
-
-
 module.exports = Food;

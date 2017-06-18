@@ -7,8 +7,12 @@ var Rat = require('../rat');
 describe('hero', function() {
 
   var superman;
-  var sausages;
-  var task1;
+
+  var sausages, fishFingers, steak, salad;
+  var beans, fruit, nuts,mightyBurger;
+
+  var task1, task2, task3;
+ 
   var rat;
 
   beforeEach( function() {
@@ -76,6 +80,13 @@ describe('hero', function() {
     assert.equal(0.5, superman.health);
   })
 
+  it("hero can check if food contaminated", function() {
+    rat.touchFood(sausages);
+    superman.eat(sausages);
+ 
+    assert.equal(true, superman.checkFoodQuality(sausages));
+  })
+
   it("heros health set to max 100%", function() {
     superman.eat(mightyBurger);
     superman.eat(mightyBurger);
@@ -94,30 +105,64 @@ describe('hero', function() {
     assert.equal(3,superman.taskList.length);
   })
 
-
-  // it("order tasks by difficulty", function() {
-  //   var orderArray = [];
-  //   var orderKey = "difficulty";
-
+  // it ("check no tasks are completed", function() {
   //   superman.addTask(superman.task1);
   //   superman.addTask(superman.task2);
   //   superman.addTask(superman.task3);
-  //   var result = superman.orderTasks(superman.taskList,orderKey);
-  //   assert.equal("'task 2','task 1', 'task3'",result);
+
+  //   var completeCount = superman.displayCompletedTasks(superman);
+  //   assert.equal(0,completeCount);
   // })
 
-  it ("check all completed tasks are displayed", function() {
-    superman.addTask(superman.task1);
-    superman.addTask(superman.task2);
-    superman.addTask(superman.task3);
-    task1.setTaskComplete()
-    result = superman.displayCompletedTasks(superman.taskList);
-    assert.equal(1, result);
+  // it ("check all completed tasks are displayed", function() {
+  //   superman.addTask(superman.task1);
+  //   superman.addTask(superman.task2);
+  //   superman.addTask(superman.task3);
+  //   task1.setTaskComplete();
+  //   task2.setTaskComplete();
 
-  })
-    
+  //   var completeCount = superman.displayCompletedTasks(superman);
+  //   assert.equal(2,completeCount);
+  // })
+ 
+ it("order tasks by difficulty", function() {
+   var orderArray = [];
+   var orderKey = "difficulty";
+
+   superman.addTask(superman.task1);
+   superman.addTask(superman.task2);
+   superman.addTask(superman.task3);
+   
+   var result = superman.orderTasks(superman.taskList,orderKey);
+
+   assert.equal("'task 2','task 1', 'task3'",result);
+ })   
   
+ // it("order tasks by urgency", function() {
+ //   var orderArray = [];
+ //   var orderKey = "urgency";
 
+ //   superman.addTask(superman.task1);
+ //   superman.addTask(superman.task2);
+ //   superman.addTask(superman.task3);
+   
+ //   var result = superman.orderTasks(superman.taskList,orderKey);
+   
+ //   assert.equal("'task 2','task 1', 'task3'",result);
+ // })   
+
+ // it("order tasks by rewardTokens", function() {
+ //   var orderArray = [];
+ //   var orderKey = "rewardTokens";
+
+ //   superman.addTask(superman.task1);
+ //   superman.addTask(superman.task2);
+ //   superman.addTask(superman.task3);
+   
+ //   var result = superman.orderTasks(superman.taskList,orderKey);
+   
+ //   assert.equal("'task 2','task 1', 'task3'",result);
+ // }) 
 
 
 })
